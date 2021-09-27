@@ -23,7 +23,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: '"Cormorant Garamond", "serif"',
+    fontFamily: '"Lora", "serif"',
     button: {
       fontFamily: '"Poppins", "sans-serif"',
     },
