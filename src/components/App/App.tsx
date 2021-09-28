@@ -11,10 +11,11 @@ import {
   CircularProgress,
   Divider,
   List,
-  ListSubheader,
   ListItem,
   ListItemIcon,
   ListItemText,
+  TextField,
+  Button,
 } from '@mui/material';
 import Image from 'material-ui-image';
 import ScrollAnimation from 'react-animate-on-scroll';
@@ -230,7 +231,7 @@ export default function App() {
         justifyContent="center"
         sx={{
           gridColumn: '1 / -1',
-          rowGap: '1em',
+          rowGap: '3em',
         }}
       >
         <Typography
@@ -278,9 +279,7 @@ export default function App() {
         justifyContent="center"
         sx={{
           gridColumn: '1 / -1',
-          // gridTemplateColumns: 'repeat(3, auto)',
-          // justifyContent: 'stretch',
-          rowGap: '1em',
+          rowGap: '3em',
         }}
       >
         <Typography
@@ -569,21 +568,109 @@ export default function App() {
               primary="Material UI"
             />
           </ListItem>
-          <ScrollAnimation
-            animateIn="grow"
-            animateOnce={true}
-            animateOut="shrink"
-            duration={2}
-            offset={300}
-            style={{gridColumn: '1 / -1'}}
+        </List>
+      </Grid>
+    </ScrollAnimation>
+    <ScrollAnimation
+      animateIn="grow"
+      animateOnce={true}
+      animateOut="shrink"
+      duration={2}
+      offset={300}
+      style={{gridColumn: '1 / -1'}}
+    >
+      <Divider
+        sx={{border: 1}}
+      />
+    </ScrollAnimation>
+    <ScrollAnimation
+      animateIn="fadeIn"
+      animateOnce={true}
+      animateOut="fadeOut"
+      duration={2}
+      offset={100}
+      style={{gridColumn: '1 / -1'}}
+    >
+      <Grid
+        container
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="center"
+        sx={{
+          gridColumn: '1 / -1',
+          rowGap: '3em',
+        }}
+      >
+        <Typography
+          align="center"
+          variant="h2"
+          gutterBottom={true}
+          sx={{fontSize: 'h3.fontSize'}}
+        >
+          Let's Connect
+        </Typography>
+        <Grid
+          container
+          flexDirection="column"
+          alignItems="center"
+          justifyContent="center"
+          sx={{rowGap: 'inherit'}}
+        >
+          <form
+            style={{
+              border: '1px solid',
+              borderColor: '#e0e0e0',
+              borderRadius: '4px',
+              columnGap: '3em',
+              display: 'grid',
+              padding: '3em',
+              rowGap: '3em',
+              width: '50%',
+            }}
           >
-            <Divider
+            <TextField
+              required
+              id="name"
+              label="Name"
+              InputLabelProps={{shrink: true}}
+              variant="standard"
               sx={{
-                border: 1,
+                gridColumn: 1,
+                width: '100%',
               }}
             />
-          </ScrollAnimation>
-        </List>
+            <TextField
+              required
+              id="email"
+              label="Email"
+              InputLabelProps={{shrink: true}}
+              variant="standard"
+              sx={{
+                gridColumn: 2,
+                width: '100%',
+              }}
+            />
+            <TextField
+              required
+              id="message"
+              label="Message"
+              InputLabelProps={{shrink: true}}
+              multiline={true}
+              rows={10}
+              // variant="standard"
+              sx={{gridColumn: '1 / span 2'}}
+            />
+            <Button
+              variant="contained"
+              sx={{
+                gridColumn: 1,
+                width: '50%',
+              }}
+            >
+              Submit
+            </Button>
+          </form>
+        </Grid>
       </Grid>
     </ScrollAnimation>
   </Grid>
