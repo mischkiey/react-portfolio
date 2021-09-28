@@ -6,8 +6,10 @@ import { ReactComponent as Git } from '../assets/git.svg';
 import { ReactComponent as GraphQL } from '../assets/graphql.svg';
 import { ReactComponent as HTML } from '../assets/html.svg';
 import { ReactComponent as JavaScript } from '../assets/javascript.svg';
+import { ReactComponent as JQuery } from '../assets/jquery.svg';
 import { ReactComponent as MaterialUI } from '../assets/material-ui.svg';
 import { ReactComponent as MySQL } from '../assets/mysql.svg';
+import { ReactComponent as NodeJS } from '../assets/node-js.svg';
 import { ReactComponent as PostgresQL } from '../assets/postgresql.svg';
 import { ReactComponent as Prisma } from '../assets/prisma.svg';
 import { ReactComponent as ReactIcon } from '../assets/react.svg';
@@ -69,6 +71,12 @@ const skills: Skill[] = [
   },
   {
     // @ts-ignore
+    icon: JQuery,
+    name: 'JQuery',
+    viewBox: "0 0 512 116",
+  },
+  {
+    // @ts-ignore
     icon: MaterialUI,
     name: 'Material UI',
     viewBox: "0 0 256 204",
@@ -78,6 +86,12 @@ const skills: Skill[] = [
     icon: MySQL,
     name: 'MySQL',
     viewBox: "0 0 256 252",
+  },
+  {
+    // @ts-ignore
+    icon: NodeJS,
+    name: 'Node JS',
+    viewBox: "0 0 256 289",
   },
   {
     // @ts-ignore

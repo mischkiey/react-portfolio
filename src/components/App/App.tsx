@@ -1,6 +1,3 @@
-// Hooks & Methods
-import React from 'react';
-
 // Components
 import { 
   AppBar,
@@ -9,7 +6,6 @@ import {
   IconButton,
   Typography,
   CircularProgress,
-  Divider,
   List,
   ListItem,
   ListItemIcon,
@@ -23,6 +19,7 @@ import {
 } from '@mui/material';
 import Image from 'material-ui-image';
 import ScrollAnimation from 'react-animate-on-scroll';
+import Divider from '../Utils/Divider';
 
 // Constants
 import skills from '../../constants/skills';
@@ -71,194 +68,180 @@ export default function App() {
   }
   
   return (
-   <Grid
-    container
-    flexDirection="column"
-    sx={{
-      display: 'grid',
-      gridTemplateColumns: 'repeat(2, 1fr)', // repeat(2, 1fr)
-      minHeight: '100vh',
-      padding: '6em',
-      rowGap: '6em',
-    }}
-   >
-    <AppBar
-      color="transparent"
-      elevation={0}
-      position="relative"
+    <Grid
+      container
+      flexDirection="column"
       sx={{
-        display: 'inherit',
-        gridTemplateColumns: 'inherit',
-        gridColumn: '1 / span 2',
-        // gridRow: 1,
-        // padding: 'inherit',
+        display: 'grid',
+        minHeight: '100vh',
+        padding: '6em',
+        rowGap: '8em',
       }}
     >
-      <Grid
-        container
-        alignItems="center"
-        component="nav"
+      <AppBar
+        color="transparent"
+        elevation={0}
+        position="relative"
         sx={{
-          columnGap: '1em',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(2, fr)',
           gridColumn: 1,
         }}
       >
-        <Link
-          underline="hover"
-          sx={{
-            cursor: 'pointer',
-            fontFamily: 'button.fontFamily',
-            fontWeight: 'medium',
-          }}
-        >
-          ABOUT
-        </Link>
-        <Link
-          underline="hover"
-          sx={{
-            cursor: 'pointer',
-            fontFamily: 'button.fontFamily',
-            fontWeight: 'medium',
-          }}
-        >
-          SKILLS
-        </Link>
-        <Link
-          underline="hover"
-          sx={{
-            cursor: 'pointer',
-            fontFamily: 'button.fontFamily',
-            fontWeight: 'medium',
-          }}
-        >
-          PROJECTS
-        </Link>
-        <Link
-          underline="hover"
-          sx={{
-            cursor: 'pointer',
-            fontFamily: 'button.fontFamily',
-            fontWeight: 'medium',
-          }}
-        >
-          CONTACT
-        </Link>
-      </Grid>
-      <Grid
-        container
-        alignItems="center"
-        justifyContent="flex-end"
-        sx={{
-          columnGap: '1em',
-          gridColumn: 2,
-        }}
-      >
-        <IconButton>
-          <Facebook />
-        </IconButton>
-        <IconButton>
-          <GitHub />
-        </IconButton>
-        <IconButton>
-          <Instagram />
-        </IconButton>
-        <IconButton>
-          <LinkedIn />
-        </IconButton>
-      </Grid>
-    </AppBar>
-    <Grid
-      container
-      alignItems="center"
-      flexDirection="column"
-      sx={{
-        gridColumn: '1 / span 2',
-        rowGap: 'inherit',
-      }}
-    >
-      <Typography
-        align="center"
-        variant="h1"
-        sx={{fontSize: '5rem'}}
-      >
-        {/* Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit */}
-        Michelle Francisco <br />
-        Full Stack Web Developer <br />
-        Based in Miami
-      </Typography>
-      <Grid
-        container
-        alignItems="center"
-        justifyContent="center"
-        sx={{
-          border: 1,
-          borderColor: 'grey.300',
-          borderRadius: '50%',
-          height: '18em',
-          width: '18em',
-        }}
-      >
         <Grid
-          item
+          container
+          alignItems="center"
+          component="nav"
           sx={{
+            columnGap: '1em',
+            gridColumn: 1,
+          }}
+        >
+          <Link
+            underline="hover"
+            sx={{
+              cursor: 'pointer',
+              fontFamily: 'button.fontFamily',
+              fontWeight: 'medium',
+
+              '&:hover': {
+
+              },
+            }}
+          >
+            ABOUT
+          </Link>
+          <Link
+            underline="hover"
+            sx={{
+              cursor: 'pointer',
+              fontFamily: 'button.fontFamily',
+              fontWeight: 'medium',
+            }}
+          >
+            SKILLS
+          </Link>
+          <Link
+            underline="hover"
+            sx={{
+              cursor: 'pointer',
+              fontFamily: 'button.fontFamily',
+              fontWeight: 'medium',
+            }}
+          >
+            PROJECTS
+          </Link>
+          <Link
+            underline="hover"
+            sx={{
+              cursor: 'pointer',
+              fontFamily: 'button.fontFamily',
+              fontWeight: 'medium',
+            }}
+          >
+            CONTACT
+          </Link>
+        </Grid>
+        <Grid
+          container
+          alignItems="center"
+          justifyContent="flex-end"
+          sx={{
+            columnGap: '1em',
+            gridColumn: 2,
+          }}
+        >
+          <IconButton>
+            <Facebook />
+          </IconButton>
+          <IconButton>
+            <GitHub />
+          </IconButton>
+          <IconButton>
+            <Instagram />
+          </IconButton>
+          <IconButton>
+            <LinkedIn />
+          </IconButton>
+        </Grid>
+      </AppBar>
+      <Grid
+        container
+        alignItems="center"
+        flexDirection="column"
+        sx={{
+          gridColumn: '1 / span 2',
+          rowGap: '5em',
+        }}
+      >
+        <Typography
+          align="center"
+          variant="h1"
+          sx={{fontSize: '5rem'}}
+        >
+          Michelle Francisco <br />
+          Full Stack Web Developer <br />
+          Based in Miami
+        </Typography>
+        <Grid
+          container
+          alignItems="center"
+          justifyContent="center"
+          sx={{
+            border: 1,
+            borderColor: 'grey.300',
             borderRadius: '50%',
-            height: '15em',
+            height: '18em',
             overflow: 'hidden',
             position: 'relative',
-            width: '15em',
+            width: '18em',
           }}
         >
-        <Image
-          alt="Dummy"
-          errorIcon={
-            <BrokenImage
-              sx={{ 
-                color: 'grey.300',
-                height: 48,
-                width: 48,
-              }}
-            />
-          }
-          loading={
-            <CircularProgress
-              size={48}
-            />
-          }
-          src={Dummy}
-        />
+          <Image
+            alt="Dummy"
+            errorIcon={
+              <BrokenImage
+                sx={{ 
+                  color: 'grey.300',
+                  height: 48,
+                  width: 48,
+                }}
+              />
+            }
+            loading={
+              <CircularProgress
+                size={48}
+              />
+            }
+            src={Dummy}
+            style={{
+              display: 'flex',
+              borderRadius: '50%',
+              height: '15em',
+              overflow: 'hidden',
+              position: 'relative',
+              paddingTop: 'none',
+              width: '15em',
+            }}
+            imageStyle={{objectFit: 'cover'}}
+          />
         </Grid>
       </Grid>
-    </Grid>
-    <ScrollAnimation
-      animateIn="grow"
-      animateOnce={true}
-      animateOut="shrink"
-      duration={2}
-      offset={300}
-      style={{gridColumn: '1 / -1'}}
-    >
       <Divider
-        sx={{
-          border: 1,
-        }}
+        enableScrollAnimation={true}
       />
-    </ScrollAnimation>
-    <ScrollAnimation
-      animateIn="fadeIn"
-      animateOnce={true}
-      animateOut="fadeOut"
-      duration={2}
-      offset={300}
-      style={{gridColumn: '1 / -1'}}
-    >
-      <Grid
-        container
-        flexDirection="column"
-        alignItems="center"
-        justifyContent="center"
-        sx={{
+      <ScrollAnimation
+        animateIn="fadeIn"
+        animateOnce={true}
+        animateOut="fadeOut"
+        duration={2}
+        offset={300}
+        style={{
+          alignItems: 'center',
+          display: 'flex',
+          flexDirection: 'column',
           gridColumn: '1 / -1',
+          justifyContent: 'center',
           rowGap: '3em',
         }}
       >
@@ -278,35 +261,22 @@ export default function App() {
         >
           &#09; Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
         </Typography>
-      </Grid>
-    </ScrollAnimation>
-    <ScrollAnimation
-      animateIn="grow"
-      animateOnce={true}
-      animateOut="shrink"
-      duration={2}
-      offset={300}
-      style={{gridColumn: '1 / -1'}}
-    >
+      </ScrollAnimation>
       <Divider
-        sx={{border: 1}}
+        enableScrollAnimation={true}
       />
-    </ScrollAnimation>
-    <ScrollAnimation
-      animateIn="fadeIn"
-      animateOnce={true}
-      animateOut="fadeOut"
-      duration={2}
-      offset={300}
-      style={{gridColumn: '1 / -1'}}
-    >
-      <Grid
-        container
-        flexDirection="column"
-        alignItems="center"
-        justifyContent="center"
-        sx={{
+      <ScrollAnimation
+        animateIn="fadeIn"
+        animateOnce={true}
+        animateOut="fadeOut"
+        duration={2}
+        offset={300}
+        style={{
+          alignItems: 'center',
+          display: 'flex',
+          flexDirection: 'column',
           gridColumn: '1 / -1',
+          justifyContent: 'center',
           rowGap: '3em',
         }}
       >
@@ -333,6 +303,7 @@ export default function App() {
             },
 
             '& .MuiListItemIcon-root': {
+              height: '6em',
               marginRight: '1em',
               minWidth: '1em',
               width: '6em',
@@ -346,35 +317,22 @@ export default function App() {
         >
           {renderSkillListItems(skills)}
         </List>
-      </Grid>
-    </ScrollAnimation>
-    <ScrollAnimation
-      animateIn="grow"
-      animateOnce={true}
-      animateOut="shrink"
-      duration={2}
-      offset={300}
-      style={{gridColumn: '1 / -1'}}
-    >
+      </ScrollAnimation>
       <Divider
-        sx={{border: 1}}
+        enableScrollAnimation={true}
       />
-    </ScrollAnimation>
-    <ScrollAnimation
-      animateIn="fadeIn"
-      animateOnce={true}
-      animateOut="fadeOut"
-      duration={2}
-      offset={100}
-      style={{gridColumn: '1 / -1'}}
-    >
-      <Grid
-        container
-        flexDirection="column"
-        alignItems="center"
-        justifyContent="center"
-        sx={{
+      <ScrollAnimation
+        animateIn="fadeIn"
+        animateOnce={true}
+        animateOut="fadeOut"
+        duration={2}
+        offset={300}
+        style={{
+          alignItems: 'center',
+          display: 'flex',
+          flexDirection: 'column',
           gridColumn: '1 / -1',
+          justifyContent: 'center',
           rowGap: '3em',
         }}
       >
@@ -640,35 +598,22 @@ export default function App() {
             </CardActions>
           </Card>
         </Grid>
-      </Grid>
-    </ScrollAnimation>
-    <ScrollAnimation
-      animateIn="grow"
-      animateOnce={true}
-      animateOut="shrink"
-      duration={2}
-      offset={300}
-      style={{gridColumn: '1 / -1'}}
-    >
+      </ScrollAnimation>
       <Divider
-        sx={{border: 1}}
+        enableScrollAnimation={true}
       />
-    </ScrollAnimation>
-    <ScrollAnimation
-      animateIn="fadeIn"
-      animateOnce={true}
-      animateOut="fadeOut"
-      duration={2}
-      offset={100}
-      style={{gridColumn: '1 / -1'}}
-    >
-      <Grid
-        container
-        flexDirection="column"
-        alignItems="center"
-        justifyContent="center"
-        sx={{
+      <ScrollAnimation
+        animateIn="fadeIn"
+        animateOnce={true}
+        animateOut="fadeOut"
+        duration={2}
+        offset={300}
+        style={{
+          alignItems: 'center',
+          display: 'flex',
+          flexDirection: 'column',
           gridColumn: '1 / -1',
+          justifyContent: 'center',
           rowGap: '3em',
         }}
       >
@@ -680,99 +625,87 @@ export default function App() {
         >
           Let's Connect
         </Typography>
-        <Grid
-          container
-          flexDirection="column"
-          alignItems="center"
-          justifyContent="center"
-          sx={{rowGap: 'inherit'}}
+        <form
+          style={{
+            border: '1px solid',
+            borderColor: '#e0e0e0',
+            borderRadius: '4px',
+            columnGap: '3em',
+            display: 'grid',
+            padding: '3em',
+            rowGap: '3em',
+            width: '50%',
+          }}
         >
-          <form
-            style={{
-              border: '1px solid',
-              borderColor: '#e0e0e0',
-              borderRadius: '4px',
-              columnGap: '3em',
-              display: 'grid',
-              padding: '3em',
-              rowGap: '3em',
+          <TextField
+            required
+            id="name"
+            label="Name"
+            InputLabelProps={{shrink: true}}
+            variant="standard"
+            sx={{
+              gridColumn: 1,
+              width: '100%',
+            }}
+          />
+          <TextField
+            required
+            id="email"
+            label="Email"
+            InputLabelProps={{shrink: true}}
+            variant="standard"
+            sx={{
+              gridColumn: 2,
+              width: '100%',
+            }}
+          />
+          <TextField
+            required
+            id="message"
+            label="Message"
+            InputLabelProps={{shrink: true}}
+            multiline={true}
+            rows={10}
+            // variant="standard"
+            sx={{gridColumn: '1 / span 2'}}
+          />
+          <Button
+            variant="contained"
+            sx={{
+              gridColumn: 1,
               width: '50%',
             }}
           >
-            <TextField
-              required
-              id="name"
-              label="Name"
-              InputLabelProps={{shrink: true}}
-              variant="standard"
-              sx={{
-                gridColumn: 1,
-                width: '100%',
-              }}
-            />
-            <TextField
-              required
-              id="email"
-              label="Email"
-              InputLabelProps={{shrink: true}}
-              variant="standard"
-              sx={{
-                gridColumn: 2,
-                width: '100%',
-              }}
-            />
-            <TextField
-              required
-              id="message"
-              label="Message"
-              InputLabelProps={{shrink: true}}
-              multiline={true}
-              rows={10}
-              // variant="standard"
-              sx={{gridColumn: '1 / span 2'}}
-            />
-            <Button
-              variant="contained"
-              sx={{
-                gridColumn: 1,
-                width: '50%',
-              }}
-            >
-              Submit
-            </Button>
-          </form>
-        </Grid>
+            Submit
+          </Button>
+        </form>
+      </ScrollAnimation>
+      <Divider
+        enableScrollAnimation={false}
+      />
+      <Grid
+        container
+        alignItems="center"
+        justifyContent="center"
+        sx={{
+          columnGap: '1em',
+          gridColumn: '1 / -1',
+          rowGap: '3em',
+        }}
+      >
+        <IconButton>
+          <Facebook />
+        </IconButton>
+        <IconButton>
+          <GitHub />
+        </IconButton>
+        <IconButton>
+          <Instagram />
+        </IconButton>
+        <IconButton>
+          <LinkedIn />
+        </IconButton>
       </Grid>
-    </ScrollAnimation>
-    <Divider
-      sx={{
-        border: 1,
-        gridColumn: '1 / -1',
-      }}
-    />
-    <Grid
-      container
-      alignItems="center"
-      justifyContent="center"
-      sx={{
-        columnGap: '1em',
-        gridColumn: '1 / -1',
-        rowGap: '3em',
-      }}
-    >
-      <IconButton>
-        <Facebook />
-      </IconButton>
-      <IconButton>
-        <GitHub />
-      </IconButton>
-      <IconButton>
-        <Instagram />
-      </IconButton>
-      <IconButton>
-        <LinkedIn />
-      </IconButton>
     </Grid>
-  </Grid>
   );
 }
