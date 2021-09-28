@@ -24,6 +24,9 @@ import {
 import Image from 'material-ui-image';
 import ScrollAnimation from 'react-animate-on-scroll';
 
+// Constants
+import skills from '../../constants/skills';
+
 // Images & SVGs
 import { 
   GitHub,
@@ -35,19 +38,38 @@ import {
   Share,
 } from '@mui/icons-material';
 import Dummy from '../../assets/dummy.jpg';
-import { ReactComponent as Apollo } from '../../assets/apollo.svg';
-import { ReactComponent as GraphQL } from '../../assets/graphql.svg';
-import { ReactComponent as MaterialUI } from '../../assets/material-ui.svg';
-import { ReactComponent as Prisma } from '../../assets/prisma.svg';
-import { ReactComponent as ReactIcon } from '../../assets/react.svg';
-import { ReactComponent as Redux } from '../../assets/redux.svg';
-import { ReactComponent as TypeScript } from '../../assets/typescript.svg';
 
 // Styles
 import 'animate.css/animate.min.css';
 import './styles.css';
 
+// Types
+import { Skill } from '../../constants/skills';
+
 export default function App() {
+  function renderSkillListItems(skills: Skill[]) {
+    return skills.map(({
+      icon: Icon,
+      name,
+      viewBox,
+    }, idx) => (
+      <ListItem
+        key={idx}
+      >
+        <ListItemIcon>
+          <Icon
+            {...viewBox}
+            height="auto"
+            width="100%"
+          />
+        </ListItemIcon>
+        <ListItemText
+          primary={name}
+        />
+      </ListItem>
+    ));
+  }
+  
   return (
    <Grid
     container
@@ -301,7 +323,7 @@ export default function App() {
         </Typography>
         <List
           sx={{
-            columnCount: 5,
+            columnCount: 4,
             columnFill: 'balance',
             gridColumn: '1 / 1',
 
@@ -322,258 +344,7 @@ export default function App() {
             },
           }}
         >
-          <ListItem>
-            <ListItemIcon>
-              <ReactIcon
-                viewBox="0 0 256 230"
-                height="auto"
-                width="100%"
-              />
-            </ListItemIcon>
-            <ListItemText
-              primary="React"
-            />
-          </ListItem>
-          <ListItem>
-            <ListItemIcon>
-              <TypeScript
-                viewBox="0 0 256 256"
-                height="auto"
-                width="100%"
-              />
-            </ListItemIcon>
-            <ListItemText
-              primary="TypeScript"
-            />
-          </ListItem>
-          <ListItem>
-            <ListItemIcon>
-              <Apollo
-                viewBox="0 0 256 256"
-                height="auto"
-                width="100%"
-              />
-            </ListItemIcon>
-            <ListItemText
-              primary="Apollo Client & Server"
-            />
-          </ListItem>
-          <ListItem>
-            <ListItemIcon>
-              <GraphQL
-                viewBox="0 0 256 288"
-                height="auto"
-                width="100%"
-              />
-            </ListItemIcon>
-            <ListItemText
-              primary="GraphQL"
-            />
-          </ListItem>
-          <ListItem>
-            <ListItemIcon>
-              <Prisma
-                viewBox="0 0 256 310"
-                height="auto"
-                width="100%"
-              />
-            </ListItemIcon>
-            <ListItemText
-              primary="Prisma"
-            />
-          </ListItem>
-          <ListItem>
-            <ListItemIcon>
-              <Redux
-                viewBox="0 0 256 244"
-                height="auto"
-                width="100%"
-              />
-            </ListItemIcon>
-            <ListItemText
-              primary="React Redux"
-            />
-          </ListItem>
-          <ListItem>
-            <ListItemIcon>
-              <MaterialUI
-                viewBox="0 0 256 204"
-                height="auto"
-                width="100%"
-              />
-            </ListItemIcon>
-            <ListItemText
-              primary="Material UI"
-            />
-          </ListItem>
-          <ListItem>
-            <ListItemIcon>
-              <ReactIcon
-                viewBox="0 0 256 230"
-                height="auto"
-                width="100%"
-              />
-            </ListItemIcon>
-            <ListItemText
-              primary="React"
-            />
-          </ListItem>
-          <ListItem>
-            <ListItemIcon>
-              <TypeScript
-                viewBox="0 0 256 256"
-                height="auto"
-                width="100%"
-              />
-            </ListItemIcon>
-            <ListItemText
-              primary="TypeScript"
-            />
-          </ListItem>
-          <ListItem>
-            <ListItemIcon>
-              <Apollo
-                viewBox="0 0 256 256"
-                height="auto"
-                width="100%"
-              />
-            </ListItemIcon>
-            <ListItemText
-              primary="Apollo Client & Server"
-            />
-          </ListItem>
-          <ListItem>
-            <ListItemIcon>
-              <GraphQL
-                viewBox="0 0 256 288"
-                height="auto"
-                width="100%"
-              />
-            </ListItemIcon>
-            <ListItemText
-              primary="GraphQL"
-            />
-          </ListItem>
-          <ListItem>
-            <ListItemIcon>
-              <Prisma
-                viewBox="0 0 256 310"
-                height="auto"
-                width="100%"
-              />
-            </ListItemIcon>
-            <ListItemText
-              primary="Prisma"
-            />
-          </ListItem>
-          <ListItem>
-            <ListItemIcon>
-              <Redux
-                viewBox="0 0 256 244"
-                height="auto"
-                width="100%"
-              />
-            </ListItemIcon>
-            <ListItemText
-              primary="React Redux"
-            />
-          </ListItem>
-          <ListItem>
-            <ListItemIcon>
-              <MaterialUI
-                viewBox="0 0 256 204"
-                height="auto"
-                width="100%"
-              />
-            </ListItemIcon>
-            <ListItemText
-              primary="Material UI"
-            />
-          </ListItem>
-          <ListItem>
-            <ListItemIcon>
-              <ReactIcon
-                viewBox="0 0 256 230"
-                height="auto"
-                width="100%"
-              />
-            </ListItemIcon>
-            <ListItemText
-              primary="React"
-            />
-          </ListItem>
-          <ListItem>
-            <ListItemIcon>
-              <TypeScript
-                viewBox="0 0 256 256"
-                height="auto"
-                width="100%"
-              />
-            </ListItemIcon>
-            <ListItemText
-              primary="TypeScript"
-            />
-          </ListItem>
-          <ListItem>
-            <ListItemIcon>
-              <Apollo
-                viewBox="0 0 256 256"
-                height="auto"
-                width="100%"
-              />
-            </ListItemIcon>
-            <ListItemText
-              primary="Apollo Client & Server"
-            />
-          </ListItem>
-          <ListItem>
-            <ListItemIcon>
-              <GraphQL
-                viewBox="0 0 256 288"
-                height="auto"
-                width="100%"
-              />
-            </ListItemIcon>
-            <ListItemText
-              primary="GraphQL"
-            />
-          </ListItem>
-          <ListItem>
-            <ListItemIcon>
-              <Prisma
-                viewBox="0 0 256 310"
-                height="auto"
-                width="100%"
-              />
-            </ListItemIcon>
-            <ListItemText
-              primary="Prisma"
-            />
-          </ListItem>
-          <ListItem>
-            <ListItemIcon>
-              <Redux
-                viewBox="0 0 256 244"
-                height="auto"
-                width="100%"
-              />
-            </ListItemIcon>
-            <ListItemText
-              primary="React Redux"
-            />
-          </ListItem>
-          <ListItem>
-            <ListItemIcon>
-              <MaterialUI
-                viewBox="0 0 256 204"
-                height="auto"
-                width="100%"
-              />
-            </ListItemIcon>
-            <ListItemText
-              primary="Material UI"
-            />
-          </ListItem>
+          {renderSkillListItems(skills)}
         </List>
       </Grid>
     </ScrollAnimation>
@@ -622,12 +393,192 @@ export default function App() {
           sx={{
             display: 'grid',
             gridGap: '3em',
-            gridTemplateColumns: 'repeat(5, calc(50% - 1.5em))',
+            gridTemplateColumns: 'repeat(5, calc(30% - 1.5em))',
             overflowX: 'scroll',
             scrollSnapAlign: 'start',
             scrollSnapType: 'x proximity',
           }}
         >
+          <Card
+            sx={{
+              border: 1,
+              borderColor: 'grey.300',
+            }}
+          >
+            <CardHeader
+              action={
+                <IconButton>
+                  <LinkIcon />
+                </IconButton>
+              }
+              title="PROJECT TITLE"
+              subheader="Project Completion Date"
+              sx={{
+                '& .MuiCardHeader-title': {
+                  fontFamily: 'button.fontFamily',
+                },
+              }}
+            />
+            <Image
+              alt="Dummy"
+              errorIcon={
+                <BrokenImage
+                  sx={{ 
+                    color: 'grey.300',
+                    height: 48,
+                    width: 48,
+                  }}
+                />
+              }
+              loading={
+                <CircularProgress
+                  size={48}
+                />
+              }
+              src={Dummy}
+              style={{
+                display: 'flex',
+                paddingTop: 'none',
+              }}
+              imageStyle={{
+                position: 'relative',
+                objectFit: 'cover',
+              }}
+            />
+            <CardContent>
+              <Typography>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <IconButton>
+                <GitHub />
+              </IconButton>
+              <IconButton>
+                <Share />
+              </IconButton>
+            </CardActions>
+          </Card>
+          <Card
+            sx={{
+              border: 1,
+              borderColor: 'grey.300',
+            }}
+          >
+            <CardHeader
+              action={
+                <IconButton>
+                  <LinkIcon />
+                </IconButton>
+              }
+              title="PROJECT TITLE"
+              subheader="Project Completion Date"
+              sx={{
+                '& .MuiCardHeader-title': {
+                  fontFamily: 'button.fontFamily',
+                },
+              }}
+            />
+            <Image
+              alt="Dummy"
+              errorIcon={
+                <BrokenImage
+                  sx={{ 
+                    color: 'grey.300',
+                    height: 48,
+                    width: 48,
+                  }}
+                />
+              }
+              loading={
+                <CircularProgress
+                  size={48}
+                />
+              }
+              src={Dummy}
+              style={{
+                display: 'flex',
+                paddingTop: 'none',
+              }}
+              imageStyle={{
+                position: 'relative',
+                objectFit: 'cover',
+              }}
+            />
+            <CardContent>
+              <Typography>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <IconButton>
+                <GitHub />
+              </IconButton>
+              <IconButton>
+                <Share />
+              </IconButton>
+            </CardActions>
+          </Card>
+          <Card
+            sx={{
+              border: 1,
+              borderColor: 'grey.300',
+            }}
+          >
+            <CardHeader
+              action={
+                <IconButton>
+                  <LinkIcon />
+                </IconButton>
+              }
+              title="PROJECT TITLE"
+              subheader="Project Completion Date"
+              sx={{
+                '& .MuiCardHeader-title': {
+                  fontFamily: 'button.fontFamily',
+                },
+              }}
+            />
+            <Image
+              alt="Dummy"
+              errorIcon={
+                <BrokenImage
+                  sx={{ 
+                    color: 'grey.300',
+                    height: 48,
+                    width: 48,
+                  }}
+                />
+              }
+              loading={
+                <CircularProgress
+                  size={48}
+                />
+              }
+              src={Dummy}
+              style={{
+                display: 'flex',
+                paddingTop: 'none',
+              }}
+              imageStyle={{
+                position: 'relative',
+                objectFit: 'cover',
+              }}
+            />
+            <CardContent>
+              <Typography>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <IconButton>
+                <GitHub />
+              </IconButton>
+              <IconButton>
+                <Share />
+              </IconButton>
+            </CardActions>
+          </Card>
           <Card
             sx={{
               border: 1,
