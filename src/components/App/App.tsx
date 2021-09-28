@@ -20,6 +20,7 @@ import {
 import Image from 'material-ui-image';
 import ScrollAnimation from 'react-animate-on-scroll';
 import Divider from '../Utils/Divider';
+import Contact from '../Contact';
 
 // Constants
 import skills from '../../constants/skills';
@@ -42,6 +43,7 @@ import './styles.css';
 
 // Types
 import { Skill } from '../../constants/skills';
+import { Project } from '../../constants/projects';
 
 export default function App() {
   function renderSkillListItems(skills: Skill[]) {
@@ -64,6 +66,72 @@ export default function App() {
           primary={name}
         />
       </ListItem>
+    ));
+  }
+
+  function renderProjectCards(projects: Project[]) {
+    return projects.map((_, idx) => (
+      <Card
+        key={idx}
+        sx={{
+          border: 1,
+          borderColor: 'grey.300',
+        }}
+      >
+        <CardHeader
+          action={
+            <IconButton>
+              <LinkIcon />
+            </IconButton>
+          }
+          title="PROJECT TITLE"
+          subheader="Project Completion Date"
+          sx={{
+            '& .MuiCardHeader-title': {
+              fontFamily: 'button.fontFamily',
+            },
+          }}
+        />
+        <Image
+          alt="Dummy"
+          errorIcon={
+            <BrokenImage
+              sx={{ 
+                color: 'grey.300',
+                height: 48,
+                width: 48,
+              }}
+            />
+          }
+          loading={
+            <CircularProgress
+              size={48}
+            />
+          }
+          src={Dummy}
+          style={{
+            display: 'flex',
+            paddingTop: 'none',
+          }}
+          imageStyle={{
+            position: 'relative',
+            objectFit: 'cover',
+          }}
+        />
+        <CardContent>
+          <Typography>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <IconButton>
+            <GitHub />
+          </IconButton>
+          <IconButton>
+            <Share />
+          </IconButton>
+        </CardActions>
+      </Card>
     ));
   }
   
@@ -351,252 +419,13 @@ export default function App() {
           sx={{
             display: 'grid',
             gridGap: '3em',
-            gridTemplateColumns: 'repeat(5, calc(30% - 1.5em))',
+            gridTemplateColumns: 'repeat(6, calc(30% - 1.5em))',
             overflowX: 'scroll',
             scrollSnapAlign: 'start',
             scrollSnapType: 'x proximity',
           }}
         >
-          <Card
-            sx={{
-              border: 1,
-              borderColor: 'grey.300',
-            }}
-          >
-            <CardHeader
-              action={
-                <IconButton>
-                  <LinkIcon />
-                </IconButton>
-              }
-              title="PROJECT TITLE"
-              subheader="Project Completion Date"
-              sx={{
-                '& .MuiCardHeader-title': {
-                  fontFamily: 'button.fontFamily',
-                },
-              }}
-            />
-            <Image
-              alt="Dummy"
-              errorIcon={
-                <BrokenImage
-                  sx={{ 
-                    color: 'grey.300',
-                    height: 48,
-                    width: 48,
-                  }}
-                />
-              }
-              loading={
-                <CircularProgress
-                  size={48}
-                />
-              }
-              src={Dummy}
-              style={{
-                display: 'flex',
-                paddingTop: 'none',
-              }}
-              imageStyle={{
-                position: 'relative',
-                objectFit: 'cover',
-              }}
-            />
-            <CardContent>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </Typography>
-            </CardContent>
-            <CardActions>
-              <IconButton>
-                <GitHub />
-              </IconButton>
-              <IconButton>
-                <Share />
-              </IconButton>
-            </CardActions>
-          </Card>
-          <Card
-            sx={{
-              border: 1,
-              borderColor: 'grey.300',
-            }}
-          >
-            <CardHeader
-              action={
-                <IconButton>
-                  <LinkIcon />
-                </IconButton>
-              }
-              title="PROJECT TITLE"
-              subheader="Project Completion Date"
-              sx={{
-                '& .MuiCardHeader-title': {
-                  fontFamily: 'button.fontFamily',
-                },
-              }}
-            />
-            <Image
-              alt="Dummy"
-              errorIcon={
-                <BrokenImage
-                  sx={{ 
-                    color: 'grey.300',
-                    height: 48,
-                    width: 48,
-                  }}
-                />
-              }
-              loading={
-                <CircularProgress
-                  size={48}
-                />
-              }
-              src={Dummy}
-              style={{
-                display: 'flex',
-                paddingTop: 'none',
-              }}
-              imageStyle={{
-                position: 'relative',
-                objectFit: 'cover',
-              }}
-            />
-            <CardContent>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </Typography>
-            </CardContent>
-            <CardActions>
-              <IconButton>
-                <GitHub />
-              </IconButton>
-              <IconButton>
-                <Share />
-              </IconButton>
-            </CardActions>
-          </Card>
-          <Card
-            sx={{
-              border: 1,
-              borderColor: 'grey.300',
-            }}
-          >
-            <CardHeader
-              action={
-                <IconButton>
-                  <LinkIcon />
-                </IconButton>
-              }
-              title="PROJECT TITLE"
-              subheader="Project Completion Date"
-              sx={{
-                '& .MuiCardHeader-title': {
-                  fontFamily: 'button.fontFamily',
-                },
-              }}
-            />
-            <Image
-              alt="Dummy"
-              errorIcon={
-                <BrokenImage
-                  sx={{ 
-                    color: 'grey.300',
-                    height: 48,
-                    width: 48,
-                  }}
-                />
-              }
-              loading={
-                <CircularProgress
-                  size={48}
-                />
-              }
-              src={Dummy}
-              style={{
-                display: 'flex',
-                paddingTop: 'none',
-              }}
-              imageStyle={{
-                position: 'relative',
-                objectFit: 'cover',
-              }}
-            />
-            <CardContent>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </Typography>
-            </CardContent>
-            <CardActions>
-              <IconButton>
-                <GitHub />
-              </IconButton>
-              <IconButton>
-                <Share />
-              </IconButton>
-            </CardActions>
-          </Card>
-          <Card
-            sx={{
-              border: 1,
-              borderColor: 'grey.300',
-            }}
-          >
-            <CardHeader
-              action={
-                <IconButton>
-                  <LinkIcon />
-                </IconButton>
-              }
-              title="PROJECT TITLE"
-              subheader="Project Completion Date"
-              sx={{
-                '& .MuiCardHeader-title': {
-                  fontFamily: 'button.fontFamily',
-                },
-              }}
-            />
-            <Image
-              alt="Dummy"
-              errorIcon={
-                <BrokenImage
-                  sx={{ 
-                    color: 'grey.300',
-                    height: 48,
-                    width: 48,
-                  }}
-                />
-              }
-              loading={
-                <CircularProgress
-                  size={48}
-                />
-              }
-              src={Dummy}
-              style={{
-                display: 'flex',
-                paddingTop: 'none',
-              }}
-              imageStyle={{
-                position: 'relative',
-                objectFit: 'cover',
-              }}
-            />
-            <CardContent>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </Typography>
-            </CardContent>
-            <CardActions>
-              <IconButton>
-                <GitHub />
-              </IconButton>
-              <IconButton>
-                <Share />
-              </IconButton>
-            </CardActions>
-          </Card>
+          {renderProjectCards([...Array(6)])}
         </Grid>
       </ScrollAnimation>
       <Divider
@@ -625,60 +454,7 @@ export default function App() {
         >
           Let's Connect
         </Typography>
-        <form
-          style={{
-            border: '1px solid',
-            borderColor: '#e0e0e0',
-            borderRadius: '4px',
-            columnGap: '3em',
-            display: 'grid',
-            padding: '3em',
-            rowGap: '3em',
-            width: '50%',
-          }}
-        >
-          <TextField
-            required
-            id="name"
-            label="Name"
-            InputLabelProps={{shrink: true}}
-            variant="standard"
-            sx={{
-              gridColumn: 1,
-              width: '100%',
-            }}
-          />
-          <TextField
-            required
-            id="email"
-            label="Email"
-            InputLabelProps={{shrink: true}}
-            variant="standard"
-            sx={{
-              gridColumn: 2,
-              width: '100%',
-            }}
-          />
-          <TextField
-            required
-            id="message"
-            label="Message"
-            InputLabelProps={{shrink: true}}
-            multiline={true}
-            rows={10}
-            // variant="standard"
-            sx={{gridColumn: '1 / span 2'}}
-          />
-          <Button
-            variant="contained"
-            sx={{
-              gridColumn: 1,
-              width: '50%',
-            }}
-          >
-            Submit
-          </Button>
-        </form>
+        <Contact />
       </ScrollAnimation>
       <Divider
         enableScrollAnimation={false}
