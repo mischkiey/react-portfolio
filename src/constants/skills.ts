@@ -3,6 +3,7 @@ import { ReactComponent as Apollo } from '../assets/apollo.svg';
 import { ReactComponent as CSS } from '../assets/css.svg';
 import { ReactComponent as Firebase } from '../assets/firebase.svg';
 import { ReactComponent as Git } from '../assets/git.svg';
+import { ReactComponent as GitHub } from '../assets/github.svg';
 import { ReactComponent as GraphQL } from '../assets/graphql.svg';
 import { ReactComponent as HTML } from '../assets/html.svg';
 import { ReactComponent as JavaScript } from '../assets/javascript.svg';
@@ -53,6 +54,12 @@ const skills: Skill[] = [
   },
   {
     // @ts-ignore
+    icon: GitHub,
+    name: 'GitHub',
+    viewBox: "0 0 256 250",
+  },
+  {
+    // @ts-ignore
     icon: GraphQL,
     name: 'GraphQL',
     viewBox: "0 0 256 288",
@@ -96,7 +103,7 @@ const skills: Skill[] = [
   {
     // @ts-ignore
     icon: PostgresQL,
-    name: 'GraphQL',
+    name: 'PostgresQL',
     viewBox: "0 0 256 264",
   },
   {

@@ -46,6 +46,16 @@ import { Skill } from '../../constants/skills';
 import { Project } from '../../constants/projects';
 
 export default function App() {
+  function handleScrollIntoView(elementId: string, blockPosition?: ScrollLogicalPosition) {
+    document
+      ?.getElementById(elementId)
+      ?.scrollIntoView({
+        behavior: 'smooth',
+        block: blockPosition,
+        inline: 'center',
+      });
+  }
+
   function renderSkillListItems(skills: Skill[]) {
     return skills.map(({
       icon: Icon,
@@ -141,19 +151,30 @@ export default function App() {
       flexDirection="column"
       sx={{
         display: 'grid',
+        gridTemplateColumns: '1fr',
+        justifyContent: 'stretch',
         minHeight: '100vh',
         padding: '6em',
         rowGap: '8em',
+
+        '@media all and (max-width: 599px)': {
+          padding: '3em',
+        },
+
+        '@media all and (max-width: 375px)': {
+          padding: 0,
+        },
       }}
     >
       <AppBar
         color="transparent"
         elevation={0}
-        position="relative"
+        position="sticky"
         sx={{
           display: 'grid',
           gridTemplateColumns: 'repeat(2, fr)',
           gridColumn: 1,
+          top: '3em',
         }}
       >
         <Grid
@@ -165,50 +186,86 @@ export default function App() {
             gridColumn: 1,
           }}
         >
-          <Link
-            underline="hover"
+          <Button
+            disableRipple={true}
+            variant="text"
+            onClick={() => handleScrollIntoView('about', 'center')}
             sx={{
-              cursor: 'pointer',
               fontFamily: 'button.fontFamily',
               fontWeight: 'medium',
+              margin: 0,
+              minWidth: 'fit-content',
+              padding: 0,
 
               '&:hover': {
-
+                backgroundColor: 'transparent',
+                color: 'secondary.main',
+                fontWeight: 600,
               },
             }}
           >
             ABOUT
-          </Link>
-          <Link
-            underline="hover"
+          </Button>
+          <Button
+            disableRipple={true}
+            variant="text"
+            onClick={() => handleScrollIntoView('skills')}
             sx={{
-              cursor: 'pointer',
               fontFamily: 'button.fontFamily',
               fontWeight: 'medium',
+              margin: 0,
+              minWidth: 'fit-content',
+              padding: 0,
+
+              '&:hover': {
+                backgroundColor: 'transparent',
+                color: 'secondary.main',
+                fontWeight: 600,
+              },
             }}
           >
             SKILLS
-          </Link>
-          <Link
-            underline="hover"
+          </Button>
+          <Button
+            disableRipple={true}
+            variant="text"
+            onClick={() => handleScrollIntoView('projects')}
             sx={{
-              cursor: 'pointer',
               fontFamily: 'button.fontFamily',
               fontWeight: 'medium',
+              margin: 0,
+              minWidth: 'fit-content',
+              padding: 0,
+
+              '&:hover': {
+                backgroundColor: 'transparent',
+                color: 'secondary.main',
+                fontWeight: 600,
+              },
             }}
           >
             PROJECTS
-          </Link>
-          <Link
-            underline="hover"
+          </Button>
+          <Button
+            disableRipple={true}
+            variant="text"
+            onClick={() => handleScrollIntoView('contact', 'center')}
             sx={{
-              cursor: 'pointer',
               fontFamily: 'button.fontFamily',
               fontWeight: 'medium',
+              margin: 0,
+              minWidth: 'fit-content',
+              padding: 0,
+
+              '&:hover': {
+                backgroundColor: 'transparent',
+                color: 'secondary.main',
+                fontWeight: 600,
+              },
             }}
           >
             CONTACT
-          </Link>
+          </Button>
         </Grid>
         <Grid
           container
@@ -219,16 +276,56 @@ export default function App() {
             gridColumn: 2,
           }}
         >
-          <IconButton>
+          <IconButton
+            component="a"
+            disableRipple={true}
+            href="https://www.facebook.com/Mischkiey/"
+            sx={{
+              '&:hover, &:hover .MuiSvgIcon-root': {
+                backgroundColor: 'transparent',
+                fill: '#b71c1c',
+              },
+            }}
+          >
             <Facebook />
           </IconButton>
-          <IconButton>
+          <IconButton
+            component="a"
+            disableRipple={true}
+            href="https://github.com/mischkiey"
+            sx={{
+              '&:hover, &:hover .MuiSvgIcon-root': {
+                backgroundColor: 'transparent',
+                fill: '#b71c1c',
+              },
+            }}
+          >
             <GitHub />
           </IconButton>
-          <IconButton>
+          <IconButton
+            component="a"
+            disableRipple={true}
+            href="https://www.instagram.com/mischkiey/"
+            sx={{
+              '&:hover, &:hover .MuiSvgIcon-root': {
+                backgroundColor: 'transparent',
+                fill: '#b71c1c',
+              },
+            }}
+          >
             <Instagram />
           </IconButton>
-          <IconButton>
+          <IconButton
+            component="a"
+            disableRipple={true}
+            href="https://www.linkedin.com/in/michellecfrancisco/"
+            sx={{
+              '&:hover, &:hover .MuiSvgIcon-root': {
+                backgroundColor: 'transparent',
+                fill: '#b71c1c',
+              },
+            }}
+          >
             <LinkedIn />
           </IconButton>
         </Grid>
@@ -322,6 +419,7 @@ export default function App() {
           About
         </Typography>
         <Typography
+          id="about"
           align="left"
           gutterBottom={true}
           variant="body1"
@@ -349,6 +447,7 @@ export default function App() {
         }}
       >
         <Typography
+          id="skills"
           align="center"
           variant="h2"
           gutterBottom={true}
@@ -361,7 +460,7 @@ export default function App() {
         </Typography>
         <List
           sx={{
-            columnCount: 4,
+            columnCount: 3,
             columnFill: 'balance',
             gridColumn: '1 / 1',
 
@@ -405,6 +504,7 @@ export default function App() {
         }}
       >
         <Typography
+          id="projects"
           align="center"
           variant="h2"
           gutterBottom={true}
@@ -423,6 +523,10 @@ export default function App() {
             overflowX: 'scroll',
             scrollSnapAlign: 'start',
             scrollSnapType: 'x proximity',
+
+            '@media all and (max-width: 599px)': {
+              gridTemplateColumns: 'repeat(6, calc(50% - 1.5em))',
+            },
           }}
         >
           {renderProjectCards([...Array(6)])}
@@ -447,6 +551,7 @@ export default function App() {
         }}
       >
         <Typography
+          id="contact"
           align="center"
           variant="h2"
           gutterBottom={true}
@@ -469,16 +574,56 @@ export default function App() {
           rowGap: '3em',
         }}
       >
-        <IconButton>
+        <IconButton
+          component="a"
+          disableRipple={true}
+          href="https://www.facebook.com/Mischkiey/"
+          sx={{
+            '&:hover, &:hover .MuiSvgIcon-root': {
+              backgroundColor: 'transparent',
+              fill: '#b71c1c',
+            },
+          }}
+        >
           <Facebook />
         </IconButton>
-        <IconButton>
+        <IconButton
+          component="a"
+          disableRipple={true}
+          href="https://github.com/mischkiey"
+          sx={{
+            '&:hover, &:hover .MuiSvgIcon-root': {
+              backgroundColor: 'transparent',
+              fill: '#b71c1c',
+            },
+          }}
+        >
           <GitHub />
         </IconButton>
-        <IconButton>
+        <IconButton
+          component="a"
+          disableRipple={true}
+          href="https://www.instagram.com/mischkiey/"
+          sx={{
+            '&:hover, &:hover .MuiSvgIcon-root': {
+              backgroundColor: 'transparent',
+              fill: '#b71c1c',
+            },
+          }}
+        >
           <Instagram />
         </IconButton>
-        <IconButton>
+        <IconButton
+          component="a"
+          disableRipple={true}
+          href="https://www.linkedin.com/in/michellecfrancisco/"
+          sx={{
+            '&:hover, &:hover .MuiSvgIcon-root': {
+              backgroundColor: 'transparent',
+              fill: '#b71c1c',
+            },
+          }}
+        >
           <LinkedIn />
         </IconButton>
       </Grid>
