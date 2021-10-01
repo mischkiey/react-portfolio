@@ -1,11 +1,11 @@
 // Components
 import ScrollAnimation from 'react-animate-on-scroll';
-import MuiDivider from '@mui/material/Divider';
+import MuiDivider, { DividerProps as MuiDividerProps } from '@mui/material/Divider';
 
 // Styles
 import './styles.css';
 
-export default function Divider({enableScrollAnimation}: {enableScrollAnimation?: boolean}) {
+export default function Divider({enableScrollAnimation, ...props}: {enableScrollAnimation?: boolean; id?: string} & MuiDividerProps) {
 
   if (enableScrollAnimation) {
     return (
@@ -18,7 +18,7 @@ export default function Divider({enableScrollAnimation}: {enableScrollAnimation?
         style={{gridColumn: '1 / -1'}}
       >
         <MuiDivider
-          sx={{border: 1}}
+          {...props}
         />
       </ScrollAnimation>
     );
@@ -26,10 +26,8 @@ export default function Divider({enableScrollAnimation}: {enableScrollAnimation?
 
   return (
     <MuiDivider
-      sx={{
-        border: 1,
-        gridColumn: '1 / -1',
-      }}
+      {...props}
+      sx={{gridColumn: '1 / -1'}}
     />
   );
 }

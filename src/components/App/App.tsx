@@ -1,6 +1,5 @@
 // Components
 import { 
-  AppBar,
   Grid,
   Link,
   IconButton,
@@ -19,6 +18,7 @@ import {
 } from '@mui/material';
 import Image from 'material-ui-image';
 import ScrollAnimation from 'react-animate-on-scroll';
+import AppBar from '../AppBar';
 import Divider from '../Utils/Divider';
 import Contact from '../Contact';
 
@@ -166,170 +166,7 @@ export default function App() {
         },
       }}
     >
-      <AppBar
-        color="transparent"
-        elevation={0}
-        position="sticky"
-        sx={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(2, fr)',
-          gridColumn: 1,
-          top: '3em',
-        }}
-      >
-        <Grid
-          container
-          alignItems="center"
-          component="nav"
-          sx={{
-            columnGap: '1em',
-            gridColumn: 1,
-          }}
-        >
-          <Button
-            disableRipple={true}
-            variant="text"
-            onClick={() => handleScrollIntoView('about', 'center')}
-            sx={{
-              fontFamily: 'button.fontFamily',
-              fontWeight: 'medium',
-              margin: 0,
-              minWidth: 'fit-content',
-              padding: 0,
-
-              '&:hover': {
-                backgroundColor: 'transparent',
-                color: 'secondary.main',
-                fontWeight: 600,
-              },
-            }}
-          >
-            ABOUT
-          </Button>
-          <Button
-            disableRipple={true}
-            variant="text"
-            onClick={() => handleScrollIntoView('skills')}
-            sx={{
-              fontFamily: 'button.fontFamily',
-              fontWeight: 'medium',
-              margin: 0,
-              minWidth: 'fit-content',
-              padding: 0,
-
-              '&:hover': {
-                backgroundColor: 'transparent',
-                color: 'secondary.main',
-                fontWeight: 600,
-              },
-            }}
-          >
-            SKILLS
-          </Button>
-          <Button
-            disableRipple={true}
-            variant="text"
-            onClick={() => handleScrollIntoView('projects')}
-            sx={{
-              fontFamily: 'button.fontFamily',
-              fontWeight: 'medium',
-              margin: 0,
-              minWidth: 'fit-content',
-              padding: 0,
-
-              '&:hover': {
-                backgroundColor: 'transparent',
-                color: 'secondary.main',
-                fontWeight: 600,
-              },
-            }}
-          >
-            PROJECTS
-          </Button>
-          <Button
-            disableRipple={true}
-            variant="text"
-            onClick={() => handleScrollIntoView('contact', 'center')}
-            sx={{
-              fontFamily: 'button.fontFamily',
-              fontWeight: 'medium',
-              margin: 0,
-              minWidth: 'fit-content',
-              padding: 0,
-
-              '&:hover': {
-                backgroundColor: 'transparent',
-                color: 'secondary.main',
-                fontWeight: 600,
-              },
-            }}
-          >
-            CONTACT
-          </Button>
-        </Grid>
-        <Grid
-          container
-          alignItems="center"
-          justifyContent="flex-end"
-          sx={{
-            columnGap: '1em',
-            gridColumn: 2,
-          }}
-        >
-          <IconButton
-            component="a"
-            disableRipple={true}
-            href="https://www.facebook.com/Mischkiey/"
-            sx={{
-              '&:hover, &:hover .MuiSvgIcon-root': {
-                backgroundColor: 'transparent',
-                fill: '#b71c1c',
-              },
-            }}
-          >
-            <Facebook />
-          </IconButton>
-          <IconButton
-            component="a"
-            disableRipple={true}
-            href="https://github.com/mischkiey"
-            sx={{
-              '&:hover, &:hover .MuiSvgIcon-root': {
-                backgroundColor: 'transparent',
-                fill: '#b71c1c',
-              },
-            }}
-          >
-            <GitHub />
-          </IconButton>
-          <IconButton
-            component="a"
-            disableRipple={true}
-            href="https://www.instagram.com/mischkiey/"
-            sx={{
-              '&:hover, &:hover .MuiSvgIcon-root': {
-                backgroundColor: 'transparent',
-                fill: '#b71c1c',
-              },
-            }}
-          >
-            <Instagram />
-          </IconButton>
-          <IconButton
-            component="a"
-            disableRipple={true}
-            href="https://www.linkedin.com/in/michellecfrancisco/"
-            sx={{
-              '&:hover, &:hover .MuiSvgIcon-root': {
-                backgroundColor: 'transparent',
-                fill: '#b71c1c',
-              },
-            }}
-          >
-            <LinkedIn />
-          </IconButton>
-        </Grid>
-      </AppBar>
+      <AppBar />
       <Grid
         container
         alignItems="center"
@@ -393,6 +230,7 @@ export default function App() {
         </Grid>
       </Grid>
       <Divider
+        id="about"
         enableScrollAnimation={true}
       />
       <ScrollAnimation
@@ -419,7 +257,6 @@ export default function App() {
           About
         </Typography>
         <Typography
-          id="about"
           align="left"
           gutterBottom={true}
           variant="body1"
@@ -429,6 +266,7 @@ export default function App() {
         </Typography>
       </ScrollAnimation>
       <Divider
+        id="skills"
         enableScrollAnimation={true}
       />
       <ScrollAnimation
@@ -447,7 +285,6 @@ export default function App() {
         }}
       >
         <Typography
-          id="skills"
           align="center"
           variant="h2"
           gutterBottom={true}
@@ -486,6 +323,7 @@ export default function App() {
         </List>
       </ScrollAnimation>
       <Divider
+        id="projects"
         enableScrollAnimation={true}
       />
       <ScrollAnimation
@@ -504,7 +342,6 @@ export default function App() {
         }}
       >
         <Typography
-          id="projects"
           align="center"
           variant="h2"
           gutterBottom={true}
@@ -533,6 +370,7 @@ export default function App() {
         </Grid>
       </ScrollAnimation>
       <Divider
+        id="contact"
         enableScrollAnimation={true}
       />
       <ScrollAnimation
@@ -551,7 +389,6 @@ export default function App() {
         }}
       >
         <Typography
-          id="contact"
           align="center"
           variant="h2"
           gutterBottom={true}
