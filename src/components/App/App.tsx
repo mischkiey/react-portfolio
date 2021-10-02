@@ -159,6 +159,15 @@ export default function App() {
         padding: '6em',
         rowGap: '8em',
 
+        '.MuiButtonBase-root:hover': {
+          backgroundColor: '#b71c1c',
+        },
+
+        '.MuiIconButton-root:hover .MuiSvgIcon-root': {
+          backgroundColor: 'transparent',
+          fill: '#b71c1c',
+        },
+
         ...(isScreenWidthSm && {padding: '3em'}),
         ...(isScreenWidthXs && {padding: '1em'}),
       }}
@@ -222,7 +231,10 @@ export default function App() {
               paddingTop: 'none',
               width: '15em',
             }}
-            imageStyle={{objectFit: 'cover'}}
+            imageStyle={{
+              borderRadius: '50%',
+              objectFit: 'cover',
+            }}
           />
         </Grid>
       </Grid>
@@ -295,10 +307,8 @@ export default function App() {
         <List
           sx={{
             columnCount: isScreenWidthXs
-              ? 1
-              : isScreenWidthSm
-                ? 2
-                : 3,
+              ? 2
+              : 3,
             columnFill: 'balance',
             gridColumn: '1 / -1',
 
