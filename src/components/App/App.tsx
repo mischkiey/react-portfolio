@@ -319,8 +319,10 @@ export default function App() {
         <List
           sx={{
             columnCount: isScreenWidthXs
-              ? 2
-              : 3,
+              ? 1
+              : isScreenWidthSm
+                ? 2
+                : 3,
             columnFill: 'balance',
             gridColumn: '1 / -1',
 
