@@ -31,7 +31,7 @@ const skills: Skill[] = [
   {
     // @ts-ignore
     icon: Apollo,
-    name: 'Apollo Client & Server',
+    name: 'Apollo GraphQL',
     viewBox: "0 0 256 256",
   },
   {

@@ -1,13 +1,19 @@
+// Hooks & Methods
+import { useTheme } from '@mui/material/styles';
+import { useMediaQuery } from '@mui/material';
+
 // Components
 import {
   AppBar as MuiAppBar,
   Grid,
   Button,
-  IconButton,
 } from '@mui/material';
 import SocialMedia from '../Utils/SocialMedia';
 
 export default function AppBar() {
+  const theme = useTheme();
+  const isScreenWidthSm = useMediaQuery(theme.breakpoints.down('sm'));
+
   function handleScrollIntoView(elementId: string, blockPosition?: ScrollLogicalPosition) {
     document
       ?.getElementById(elementId)
@@ -49,18 +55,25 @@ export default function AppBar() {
     <MuiAppBar
       color="transparent"
       elevation={0}
-      position="sticky"
+      position="relative"
       sx={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(2, 1fr)',
+        gridTemplateColumns: 'repeat(2, minmax(auto, 1fr))',
         top: '3em',
       }}
     >
       <Grid
         container
         alignItems="center"
+        flexWrap="nowrap"
         component="nav"
-        sx={{columnGap: '1em'}}
+        sx={{
+          columnGap: '1em',
+          ...(isScreenWidthSm && {
+            gridColumn: '1 / -1',
+            justifyContent: 'center',
+          }),
+        }}
       >
         {renderNavButtons([
           'about',
@@ -69,7 +82,7 @@ export default function AppBar() {
           'contact',
         ])}
       </Grid>
-      <SocialMedia />
+      {!isScreenWidthSm && <SocialMedia />}
     </MuiAppBar>
   );
 }

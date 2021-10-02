@@ -1,7 +1,10 @@
+// Hooks & Methods
+import { useTheme } from '@mui/material/styles';
+import { useMediaQuery } from '@mui/material';
+
 // Components
 import { 
   Grid,
-  Link,
   IconButton,
   Typography,
   CircularProgress,
@@ -9,8 +12,6 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
-  TextField,
-  Button,
   Card,
   CardHeader,
   CardContent,
@@ -46,6 +47,10 @@ import { Skill } from '../../constants/skills';
 import { Project } from '../../constants/projects';
 
 export default function App() {
+  const theme = useTheme();
+  const isScreenWidthSm = useMediaQuery(theme.breakpoints.down('sm'));
+  const isScreenWidthXs = useMediaQuery('(max-width: 375px)');
+
   function handleScrollIntoView(elementId: string, blockPosition?: ScrollLogicalPosition) {
     document
       ?.getElementById(elementId)
@@ -56,7 +61,7 @@ export default function App() {
       });
   }
 
-  function renderSkillListItems(skills: Skill[]) {
+  function renderSkillListItems(skills: Skill[],) {
     return skills.map(({
       icon: Icon,
       name,
@@ -151,8 +156,8 @@ export default function App() {
       flexDirection="column"
       sx={{
         display: 'grid',
-        gridTemplateColumns: '1fr',
-        justifyContent: 'stretch',
+        gridTemplateColumns: 'minmax(0, 1fr)',
+        justifyContent: 'center',
         minHeight: '100vh',
         padding: '6em',
         rowGap: '8em',
@@ -297,9 +302,13 @@ export default function App() {
         </Typography>
         <List
           sx={{
-            columnCount: 3,
+            columnCount: isScreenWidthXs
+              ? 1
+              : isScreenWidthSm
+                ? 2
+                : 3,
             columnFill: 'balance',
-            gridColumn: '1 / 1',
+            gridColumn: '1 / -1',
 
             '& li': {
               breakInside: 'avoid',
