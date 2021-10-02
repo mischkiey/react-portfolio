@@ -48,6 +48,7 @@ import { Project } from '../../constants/projects';
 
 export default function App() {
   const theme = useTheme();
+  const isScreenWidthMd = useMediaQuery(theme.breakpoints.down('md'));
   const isScreenWidthSm = useMediaQuery(theme.breakpoints.down('sm'));
   const isScreenWidthXs = useMediaQuery('(max-width: 375px)');
 
@@ -88,10 +89,6 @@ export default function App() {
     return projects.map((_, idx) => (
       <Card
         key={idx}
-        sx={{
-          border: 1,
-          borderColor: 'grey.300',
-        }}
       >
         <CardHeader
           action={
@@ -162,13 +159,8 @@ export default function App() {
         padding: '6em',
         rowGap: '8em',
 
-        '@media all and (max-width: 599px)': {
-          padding: '3em',
-        },
-
-        '@media all and (max-width: 375px)': {
-          padding: 0,
-        },
+        ...(isScreenWidthSm && {padding: '3em'}),
+        ...(isScreenWidthXs && {padding: '1em'}),
       }}
     >
       <AppBar />
@@ -365,14 +357,12 @@ export default function App() {
           sx={{
             display: 'grid',
             gridGap: '3em',
-            gridTemplateColumns: 'repeat(6, calc(30% - 1.5em))',
+            gridTemplateColumns: 'repeat(6, calc(50% - 1.5em))',
             overflowX: 'scroll',
             scrollSnapAlign: 'start',
             scrollSnapType: 'x proximity',
 
-            '@media all and (max-width: 599px)': {
-              gridTemplateColumns: 'repeat(6, calc(50% - 1.5em))',
-            },
+            ...(isScreenWidthMd && {gridTemplateColumns: 'repeat(6, calc(100%))'}),
           }}
         >
           {renderProjectCards([...Array(6)])}

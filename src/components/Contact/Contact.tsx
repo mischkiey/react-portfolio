@@ -1,18 +1,25 @@
+// Hooks & Methods
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
+
 // Components
 import { TextField, Button } from '@mui/material'
 
 export default function Contact() {
+  const theme = useTheme();
+  const isScreenWidthSm = useMediaQuery(theme.breakpoints.down('sm'));
+
   return (
     <form
       style={{
-        border: '1px solid',
-        borderColor: '#e0e0e0',
         borderRadius: '4px',
         columnGap: '3em',
         display: 'grid',
-        padding: '3em',
+        gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
         rowGap: '3em',
-        width: '50%',
+        width: '75%',
+
+        ...(isScreenWidthSm && {width: '100%'}),
       }}
     >
       <TextField
