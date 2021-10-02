@@ -92,7 +92,14 @@ export default function App() {
       >
         <CardHeader
           action={
-            <IconButton>
+            <IconButton
+              sx={{
+                '&:hover, &:hover .MuiSvgIcon-root': {
+                  backgroundColor: 'transparent',
+                  fill: '#b71c1c',
+                },
+              }}
+            >
               <LinkIcon />
             </IconButton>
           }
@@ -136,10 +143,24 @@ export default function App() {
           </Typography>
         </CardContent>
         <CardActions>
-          <IconButton>
+          <IconButton
+            sx={{
+              '&:hover, &:hover .MuiSvgIcon-root': {
+                backgroundColor: 'transparent',
+                fill: '#b71c1c',
+              },
+            }}
+          >
             <GitHub />
           </IconButton>
-          <IconButton>
+          <IconButton
+            sx={{
+              '&:hover, &:hover .MuiSvgIcon-root': {
+                backgroundColor: 'transparent',
+                fill: '#b71c1c',
+              },
+            }}
+          >
             <Share />
           </IconButton>
         </CardActions>
@@ -158,15 +179,6 @@ export default function App() {
         minHeight: '100vh',
         padding: '6em',
         rowGap: '8em',
-
-        '.MuiButtonBase-root:hover': {
-          backgroundColor: '#b71c1c',
-        },
-
-        '.MuiIconButton-root:hover .MuiSvgIcon-root': {
-          backgroundColor: 'transparent',
-          fill: '#b71c1c',
-        },
 
         ...(isScreenWidthSm && {padding: '3em'}),
         ...(isScreenWidthXs && {padding: '1em'}),

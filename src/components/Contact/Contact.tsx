@@ -59,6 +59,10 @@ export default function Contact() {
         sx={{
           gridColumn: 1,
           width: '50%',
+
+          '&:hover': {
+            backgroundColor: '#b71c1c',
+          },
         }}
       >
         Submit
