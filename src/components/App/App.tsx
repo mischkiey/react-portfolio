@@ -52,16 +52,6 @@ export default function App() {
   const isScreenWidthSm = useMediaQuery(theme.breakpoints.down('sm'));
   const isScreenWidthXs = useMediaQuery('(max-width: 375px)');
 
-  function handleScrollIntoView(elementId: string, blockPosition?: ScrollLogicalPosition) {
-    document
-      ?.getElementById(elementId)
-      ?.scrollIntoView({
-        behavior: 'smooth',
-        block: blockPosition,
-        inline: 'center',
-      });
-  }
-
   function renderSkillListItems(skills: Skill[],) {
     return skills.map(({
       icon: Icon,
@@ -283,7 +273,15 @@ export default function App() {
           variant="body1"
           sx={{fontSize: 'h6.fontSize'}}
         >
-          &#09; Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+          To cut the long story short: I was an economist looking to get into data science, found web development and never looked back! And though careers have changed, the passion for learning is still very much alive.
+        </Typography>
+        <Typography
+          align="left"
+          gutterBottom={true}
+          variant="body1"
+          sx={{fontSize: 'h6.fontSize'}}
+        >
+          I am a full-stack web developer with experience shipping full-stack apps written in JavaScript. I also have a background in economic research, which was instrumental in building my analytical and critical thinking skills. My passion is to build rich, robust, and innovative technologies to solve problems in society.
         </Typography>
       </ScrollAnimation>
       <Divider
@@ -369,10 +367,17 @@ export default function App() {
         <Typography
           align="center"
           variant="h2"
-          gutterBottom={true}
           sx={{fontSize: 'h3.fontSize'}}
         >
           Projects
+        </Typography>
+        <Typography
+          color="secondary"
+          align="center"
+          variant="caption"
+          gutterBottom={true}
+        >
+          *Projects are currently underway, stay tuned!
         </Typography>
         <Grid
           container
