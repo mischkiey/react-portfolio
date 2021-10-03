@@ -63,8 +63,8 @@ export default function App() {
       >
         <ListItemIcon>
           <Icon
-            {...viewBox}
-            height="auto"
+            viewBox={viewBox}
+            height="100%"
             width="100%"
           />
         </ListItemIcon>
