@@ -246,9 +246,7 @@ export default function App() {
       />
       <ScrollAnimation
         animateIn="fadeIn"
-        animateOnce={true}
         animateOut="fadeOut"
-        duration={2}
         offset={300}
         style={{
           alignItems: 'center',
@@ -290,9 +288,7 @@ export default function App() {
       />
       <ScrollAnimation
         animateIn="fadeIn"
-        animateOnce={true}
         animateOut="fadeOut"
-        duration={2}
         offset={300}
         style={{
           alignItems: 'center',
@@ -351,9 +347,7 @@ export default function App() {
       />
       <ScrollAnimation
         animateIn="fadeIn"
-        animateOnce={true}
         animateOut="fadeOut"
-        duration={2}
         offset={300}
         style={{
           alignItems: 'center',
@@ -403,9 +397,7 @@ export default function App() {
       />
       <ScrollAnimation
         animateIn="fadeIn"
-        animateOnce={true}
         animateOut="fadeOut"
-        duration={2}
         offset={300}
         style={{
           alignItems: 'center',
