@@ -37,6 +37,7 @@ import {
   Share,
 } from '@mui/icons-material';
 import Dummy from '../../assets/dummy.jpg';
+import Portrait from '../../assets/portrait.jpeg';
 
 // Styles
 import 'animate.css/animate.min.css';
@@ -223,7 +224,7 @@ export default function App() {
                 size={48}
               />
             }
-            src={Dummy}
+            src={Portrait}
             style={{
               display: 'flex',
               borderRadius: '50%',
@@ -236,6 +237,7 @@ export default function App() {
             imageStyle={{
               borderRadius: '50%',
               objectFit: 'cover',
+              objectPosition: '58%',
             }}
           />
         </Grid>
@@ -271,7 +273,7 @@ export default function App() {
           variant="body1"
           sx={{fontSize: 'h6.fontSize'}}
         >
-          To cut the long story short: I was an economist looking to get into data science, found web development and never looked back! And though careers have changed, the passion for learning is still very much alive.
+          To cut the long story short: I was an economist aspiring to get into data science, found web development and never looked back! And though careers have changed, the passion for learning is still very much alive.
         </Typography>
         <Typography
           align="left"
@@ -279,7 +281,7 @@ export default function App() {
           variant="body1"
           sx={{fontSize: 'h6.fontSize'}}
         >
-          I am a full-stack web developer with experience shipping full-stack apps written in JavaScript. I also have a background in economic research, which was instrumental in building my analytical and critical thinking skills. My passion is to build rich, robust, and innovative technologies to solve problems in society.
+          I am a full-stack web developer with experience building full-stack apps written in JavaScript. I also have a background in economic research, which was instrumental in building my analytical and critical thinking skills. My passion is to build rich, robust, and innovative technologies to solve problems in society.
         </Typography>
       </ScrollAnimation>
       <Divider
@@ -316,7 +318,7 @@ export default function App() {
               ? 1
               : isScreenWidthSm
                 ? 2
-                : 3,
+                : 4,
             columnFill: 'balance',
             gridColumn: '1 / -1',
 
@@ -370,6 +372,7 @@ export default function App() {
           align="center"
           variant="caption"
           gutterBottom={true}
+          sx={{fontFamily: 'button.fontFamily'}}
         >
           *Projects are currently underway, stay tuned!
         </Typography>
