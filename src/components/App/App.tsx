@@ -80,20 +80,21 @@ export default function App() {
     return projects.map((_, idx) => (
       <Card
         key={idx}
+        sx={{boxShadow: 'none'}}
       >
         <CardHeader
-          action={
-            <IconButton
-              sx={{
-                '&:hover, &:hover .MuiSvgIcon-root': {
-                  backgroundColor: 'transparent',
-                  fill: '#b71c1c',
-                },
-              }}
-            >
-              <LinkIcon />
-            </IconButton>
-          }
+          // action={
+          //   <IconButton
+          //     sx={{
+          //       '&:hover, &:hover .MuiSvgIcon-root': {
+          //         backgroundColor: 'transparent',
+          //         fill: '#b71c1c',
+          //       },
+          //     }}
+          //   >
+          //     <LinkIcon />
+          //   </IconButton>
+          // }
           title="PROJECT TITLE"
           subheader="Project Completion Date"
           sx={{
@@ -169,7 +170,7 @@ export default function App() {
         justifyContent: 'center',
         minHeight: '100vh',
         padding: '6em',
-        rowGap: '8em',
+        rowGap: '6em',
 
         ...(isScreenWidthSm && {padding: '3em'}),
         ...(isScreenWidthXs && {padding: '1em'}),
@@ -382,8 +383,8 @@ export default function App() {
           flexWrap="nowrap"
           sx={{
             display: 'grid',
-            gridGap: '3em',
-            gridTemplateColumns: 'repeat(6, calc(50% - 1.5em))',
+            gridGap: '12em',
+            gridTemplateColumns: 'repeat(6, calc(50% - 6em))',
             overflowX: 'scroll',
             scrollSnapAlign: 'start',
             scrollSnapType: 'x proximity',
